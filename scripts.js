@@ -3,5 +3,5 @@ function watashiHover(element) {
 }
 
 function watashiUnhover(element) {
-	element.setAttribute("src", "images/oportuinity.png");
+	element.setAttribute("src", "images/oportunity.png");
 }
