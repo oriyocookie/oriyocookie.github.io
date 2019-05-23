@@ -1,0 +1,72 @@
+body {
+	background-image: url("images/bg.png");
+	background-attachment: fixed;
+	margin: 0px;
+}
+
+div.top {
+	background: #262626;
+	color: #F6F6F6;
+	text-align: center;
+	overflow: auto;
+	margin-top: -10px;
+	margin-bottom: -10px
+}
+
+div.header nav.snack-nav {
+	background: #F2EFE4;
+	border-bottom: 1px solid #D4CBB6;
+	padding: 8px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: .9em;
+	font-weight: 400;
+}
+
+div.header nav.snack-nav a{
+	font-size: .9em;
+	color: #3F3D32;
+	padding: 10px;
+	text-decoration: none;
+}
+
+div.container {
+	padding: 40px 0;
+	width: 960px;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+
+img.watashi {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	width: 450px;
+	align: center;
+	position: center;
+}
+
+img.watashi {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	width: 650px;
+	align: center;
+	position: center;
+}
+
+a.button {
+	display: inline-block;
+	margin-bottom: 1rem;
+	color: #F6F6F6;
+	background-color: #262626;
+	border-color: #F6F6F6;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.3rem;
+	text-decoration: none;
+	padding: 10px;
+}
