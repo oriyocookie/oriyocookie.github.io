@@ -10,6 +10,12 @@ p {
 	text-align: center;
 }
 
+ul {
+	font-family: cantarell;
+	font-size: 20px;
+	text-align: center;
+}
+
 div.top {
 	background: #262626;
 	color: #F6F6F6;
