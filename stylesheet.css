@@ -55,6 +55,12 @@ img.watashi {
 	position: center;
 }
 
+img.comfy {
+	display: inline;
+	height: 50px;
+	width: 50px;
+}
+
 img {
 	display: block;
 	margin-left: auto;
