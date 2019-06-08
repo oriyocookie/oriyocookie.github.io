@@ -32,13 +32,28 @@
 	library. I just log the details on how i finished the levels. I'll keep the passwords as
 	hidden as possible, but obviously if you read the code for the scripts you'll find them
 	there. This is still a work in progress</p>
-	<img src="../../images/Touko_NAVI.png" class="intro">
+	<img src="../../images/Touko_NAVI.png" class="intro"></img>
 
 	<h3><strong>Level 0 to Level 1</strong></h3>
 	<p class="walkthrough">This one is a fairly simple level. As you can see from the image
 	below <br/><p>
-	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia0.png"></img>
+	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia0.png"
+	class="helpful"></img>
+	<p class="walkthrough">There is a value that is initialized at 0x41414141 and you need to
+	change it to deadbeef. The buffer can hold a maximum of 20 characters. So in order to
+	overflow the buffer and go into changing the value of val, you just need to input 20
+	characters and put \xef\xbe\xad\xde\, which is how deadbeef has to be put in because of
+	little endianness</p>
+	<p class="walkthrough">Making the python script was fairly simple for this too. All you have
+	to do is make the ssh connection, execute the file and send the payload which is A*20 + the
+	little endian of deadbeef. Fortunately for us pwntools allows us to do all those really
+	fast. For running the file, you need to use the run command in pwntools, and then do
+	recvuntill(':') because you want to receive the code untill it asks for input. And then you
+	send the payload by using the sendline command in pwntools. The output from running the
+	pwntools is given below</p>
 
+	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia01.png
+		  class="helpful"> </img>
 	<p class="walkthrough">
 	<a href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia0.py">Here's the link to the exploit i made in python using pwntools
 	</a> 
