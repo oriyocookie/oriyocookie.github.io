@@ -21,8 +21,6 @@ div.top {
     font-family: monospace;
     color: #F6F6F6;
     overflow: auto;
-    margin-top: -10px;
-    margin-bottom: -10px
 }
 div.container {
     padding: 40px 0;
