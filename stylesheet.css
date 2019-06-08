@@ -141,8 +141,4 @@ div.header nav.navbar a {
   display: block;
 }
 
-h3::before{
-    content:"$";
-    color:white;
-}
 
