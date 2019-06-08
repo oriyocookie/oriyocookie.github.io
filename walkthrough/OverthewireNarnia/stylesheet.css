@@ -76,7 +76,7 @@ div.header nav.navbar {
 }
 
 /* Links inside the navbar */
-.navbar a {
+div.header nav.navbar a {
   float: left;
   font-size: 16px;
   color: white;
