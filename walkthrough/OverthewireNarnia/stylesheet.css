@@ -146,7 +146,9 @@ div.header nav.navbar a {
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
     text-align:left;
+    color:white;
     background-color:black;
+    outline: none;
 }
 
 .active, .collapsible:hover {
@@ -155,4 +157,5 @@ div.header nav.navbar a {
 
 .content {
     overflow: hidden;
+    display:none;
 }
