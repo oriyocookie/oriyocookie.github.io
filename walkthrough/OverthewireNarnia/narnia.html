@@ -66,7 +66,6 @@
 	    </a> 
 	    </p>
 	</div>
-	<br>
 	<div class="collapsible"><h3><strong>Level 1 to Level 2</strong></h3></div>
 	<div class="content">
 	<p class="walkthrough">This level mainly deals with the environment variables <br/><p>
@@ -109,24 +108,27 @@
 	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia21.jpg"
 	     class="helpful"> </img>
 	<p class="walkthrough">Let's look at what's happening in the picture above. So i tried
-	running the file with 128 As, and it executed properly. Then i tried running it with 133 As
+	running the file with 128 'A's, and it executed properly. Then i tried running it with 133 'A's
 	and it gave me a SIGSEGV signal, which is what we kind of want, so we are getting there.
-	Then i tried running it with 136 As and it gave me a SIGSEGV again, but notice how the
-	return address was changed from 0xf7e20048 to 0x41414141. 0x41 is A btw. So the return
-	address is somewhere above 133. After a bunch of tries putting the value 0xdeadbeef, I found
+	Then i tried running it with 136 'A's and it gave me a SIGSEGV again, but notice how the
+	return address was changed from 0xf7e20048 to 0x41414141. 0x41 is 'A' btw. So the return
+	address is somewhere above 136 or is 136. It turned out to be in 136. After a bunch of tries
+	putting the value 0xdeadbeef(which is 4 bytes long), I found
 	that 132 works since you can see that the 0x41414141 has changed  into 0xdeadbeef. So 132 is what we want,
 	however you have to take into account the shell code, which for the one i used is 28 chars
-	long</p>
+	long. So when inserting the shell code it has to be 132-28 'A's printed and then the shell
+	code which is 28 chars and then the return address.Now how do we find what the return
+	address is.</p>
 
 	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia22.jpg"
 	     class="helpful"> </img>
 	<p class="walkthrough"> Now let's look at the above picture. We are looking at the memory
 	addresses of the esp register. We can get our return address from here. Look at all the
-	0x41 aka As that are there. I used 0xffffd890 as my return address</p>
+	0x41 aka 'A's that are there. I used 0xffffd890 as my return address</p>
 
 	<p class="walkthrough"> I was kind of having trouble writing the script for this one because
 	of my inexperience with using pwntools. At first I tried making the payload exe + shellcode
-	+ return_address, which is what needs to be run. But it wasn't working. So i gave i and put
+	+ return_address, which is what needs to be run. But it wasn't working. So i gave in and put
 	in the python commands in string. It didn't work still but then I noticed I wasn't escaping
 	the backslash in the strings. Because of that it was giving a different output than
 	\x90\xd8\xff... But anyways after doing that it worked :), and here's the output below</p>
