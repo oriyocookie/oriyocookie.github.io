@@ -31,8 +31,12 @@
 	game in Overthewire, and after i was done, i made a python script using the pwntools
 	library. I just log the details on how i finished the levels. I'll keep the passwords as
 	hidden as possible, but obviously if you read the code for the scripts you'll find them
-	there. This is still a work in progress</p>
+	there. Also I won't post exactly how to solve it and give the commands. You can obviously
+	find them if you go through the scripts(So i guess i am kinda giving the answer lul). This is still a work in progress</p>
 	<img src="../../images/Touko_NAVI.png" class="intro"></img>
+	<p> The format for my walkthrough will be simple. I will briefly go over the code and write
+	what i plan on doing to complete the level. Then I shall talk about how I wrote the script
+	and what I had to do to write the script. In between all those i'll post pics </p>
 
 	<h3><strong>Level 0 to Level 1</strong></h3>
 	<p class="walkthrough">This one is a fairly simple level. As you can see from the image
@@ -55,10 +59,36 @@
 	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia01.jpg"
 	     class="helpful"> </img>
 	<p class="walkthrough">
-	<a href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia0.py">Here's the link to the exploit i made in python using pwntools
+	<a
+	    href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia0.py">Here's
+	    the link to the script for Narnia0 
 	</a> 
 	</p>
 
+	<h3><strong>Level 1 to Level 2</strong></h3>
+	<p class="walkthrough">This level mainly deals with the environment variables <br/><p>
+	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia1.jpg"
+	     class="helpful"></img>
+	<p class="walkthrough">As you can see from the code above, all this executable file does is
+	call the environment variable EGG</p>
+	<p class="walkthrough">We can easily change the environment value of EGG and call it to
+	execute commands as you can see in the image below. So to complete this level we just need to put a shell
+	code as the value for egg. You can find a bunch of shell codes at <a href="http://shell-storm.org/shellcode/">shell-storm </a></p>
+
+	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia11.jpg"
+	     class="helpful"> </img>
+	<p class="walkthrough">In order to write our python script we need to do just that. Our
+	payload has to be export EGG="shellcode" and then we need to run the narnia1 executable
+	after that. The output from my script is given below</p>
+
+	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia12.jpg"
+	     class="helpful"> </img>
+	<p class="walkthrough">
+	<a
+	    href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia1.py">Here's
+	    the link to the script for Narnia1 
+	</a> 
+	</p>
 
 
     </body>
