@@ -9,8 +9,12 @@ p {
     font-family: cantarell;
     font-size: 14px;
     color:white;
+    position:center;
 }
-
+p.walkthrough{
+    margin-left:10px;
+    position:left;
+}
 
 div.top {
     background-image: url("images/eyes.jpg");
@@ -46,15 +50,6 @@ div.container {
 }
 
 
-img.watashi {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 250px;
-    width: 450px;
-    align: center;
-    position: center;
-}
 
 img.comfy {
     display: inline;
@@ -62,14 +57,11 @@ img.comfy {
     width: 40px;
 }
 
-img {
+img.intro {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10px;
     height: auto;
-    width: 650px;
-    align: center;
-    position: center;
+    width: 350px;
 }
 
 a.button {
@@ -85,10 +77,10 @@ a.button {
     padding: 10px;
 }
 h3::before{
-content:"$";
-color:green;
+    content:"$";
+    color:green;
 }
-p::before{
-content:">";
-color:green;
+p.walkthrough::before{
+    content:">";
+    color:green;
 }
