@@ -8,7 +8,6 @@ body {
 p {
     font-family: cantarell;
     font-size: 20px;
-    text-align: center;
     color:green;
 }
 
@@ -51,8 +50,8 @@ img.watashi {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 450px;
-    width: 650px;
+    height: 250px;
+    width: 450px;
     align: center;
     position: center;
 }
@@ -84,4 +83,8 @@ a.button {
     border-radius: 0.3rem;
     text-decoration: none;
     padding: 10px;
+}
+h3::before{
+content:">";
+color:green;
 }
