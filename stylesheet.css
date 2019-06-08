@@ -9,6 +9,10 @@ p {
 	font-size: 20px;
 	margin-left:10px;
 }
+ul {
+
+    list-style:none;
+}
 
 
 div.top {
@@ -136,3 +140,9 @@ div.header nav.navbar a {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+h3::before{
+    content:"$";
+    color:white;
+}
+
