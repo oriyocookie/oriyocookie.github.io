@@ -7,14 +7,13 @@ body {
 p {
 	font-family: cantarell;
 	font-size: 20px;
-	text-align: center;
+	margin-left:10px;
 }
 
 
 div.top {
 	background: #262626;
 	color: #F6F6F6;
-	text-align: center;
 	overflow: auto;
 	margin-top: -10px;
 	margin-bottom: -10px
@@ -80,7 +79,6 @@ div.header nav.navbar a {
   float: left;
   font-size: 16px;
   color: white;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
