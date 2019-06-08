@@ -150,6 +150,9 @@ div.header nav.navbar a {
     background-color:black;
     outline: none;
 }
+.active, .collapsible:hover {
+    color:red;
+}
 
 .content {
     overflow: hidden;
