@@ -68,7 +68,6 @@
 	</div>
 	<br>
 	<div class="collapsible"><h3><strong>Level 1 to Level 2</strong></h3></div>
-
 	<div class="content">
 	<p class="walkthrough">This level mainly deals with the environment variables <br/><p>
 	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia1.jpg"
@@ -95,6 +94,53 @@
 	</p>
 	</div>
 
+	<div class="collapsible"><h3><strong>Level 2 to Level 3</strong></h3></div>
+	<div class="content">
+	<p class="walkthrough">This level mainly deals with buffer overflow <br/><p>
+	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia2.jpg"
+	     class="helpful"></img>
+	<p class="walkthrough">As you can see from the code above, all this executable file does is
+	copy the argv[1] into buf variable(that can hold 128 chars) and then prints out the buf.
+	Important to note that strcpy can be expoited by buffer overflows</p>
+	<p class="walkthrough">So for this level, all we would need to do is pass in an argument
+	that overflows the buf, inserts a shell code into it, and then has a return "Sled" at the
+	end.</p>
+
+	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia21.jpg"
+	     class="helpful"> </img>
+	<p class="walkthrough">Let's look at what's happening in the picture above. So i tried
+	running the file with 128 As, and it executed properly. Then i tried running it with 133 As
+	and it gave me a SIGSEGV signal, which is what we kind of want, so we are getting there.
+	Then i tried running it with 136 As and it gave me a SIGSEGV again, but notice how the
+	return address was changed from 0xf7e20048 to 0x41414141. 0x41 is A btw. So the return
+	address is somewhere above 133. After a bunch of tries putting the value 0xdeadbeef, I found
+	that 132 works since you can see that the 0x41414141 has changed  into 0xdeadbeef. So 132 is what we want,
+	however you have to take into account the shell code, which for the one i used is 28 chars
+	long</p>
+
+	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia22.jpg"
+	     class="helpful"> </img>
+	<p class="walkthrough"> Now let's look at the above picture. We are looking at the memory
+	addresses of the esp register. We can get our return address from here. Look at all the
+	0x41 aka As that are there. I used 0xffffd890 as my return address</p>
+
+	<p class="walkthrough"> I was kind of having trouble writing the script for this one because
+	of my inexperience with using pwntools. At first I tried making the payload exe + shellcode
+	+ return_address, which is what needs to be run. But it wasn't working. So i gave i and put
+	in the python commands in string. It didn't work still but then I noticed I wasn't escaping
+	the backslash in the strings. Because of that it was giving a different output than
+	\x90\xd8\xff... But anyways after doing that it worked :), and here's the output below</p>
+
+	<img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia23.jpg"
+	     class="helpful"> </img>
+
+	<p class="walkthrough">
+	<a
+	    href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia1.py">Here's
+	    the link to the script for Narnia1 
+	</a> 
+	</p>
+	</div>
     </body>
 
     <script src="scripts.js"></script>
