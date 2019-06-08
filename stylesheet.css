@@ -1,8 +1,8 @@
 body {
-	background-image: url("images/bg.png");
 	background-attachment: fixed;
 	background-size:cover;
 	margin: 0px;
+	background-color:#c2d2ed;
 }
 p {
 	font-family: cantarell;
