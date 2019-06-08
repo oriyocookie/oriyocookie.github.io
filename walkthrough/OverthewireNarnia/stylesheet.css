@@ -151,10 +151,6 @@ div.header nav.navbar a {
     outline: none;
 }
 
-.active, .collapsible:hover {
-    background-color: #ccc;
-}
-
 .content {
     overflow: hidden;
     display:none;
