@@ -18,6 +18,7 @@ p.walkthrough{
 
 div.top {
     background-image: url("images/eyes.jpg");
+    font-family: monospace;
     color: #F6F6F6;
     text-align: center;
     overflow: auto;
@@ -49,8 +50,6 @@ div.container {
     overflow: auto;
 }
 
-
-
 img.comfy {
     display: inline;
     height: 40px;
@@ -59,7 +58,8 @@ img.comfy {
 
 img.intro {
     display: block;
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
     width: 350px;
 }
