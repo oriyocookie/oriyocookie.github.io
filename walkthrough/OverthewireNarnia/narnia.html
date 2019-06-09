@@ -127,7 +127,7 @@
 	0x41 aka 'A's that are there. I used 0xffffd890 as my return address</p>
 
 	<p class="walkthrough"> I was kind of having trouble writing the script for this one because
-	of my inexperience with using pwntools. At first I tried making the payload exe + shellcode
+	of my inexperience with using pwntools. At first I tried making the payload=A*104+ exe + shellcode
 	+ return_address, which is what needs to be run. But it wasn't working. So i gave in and put
 	in the python commands in string. It didn't work still but then I noticed I wasn't escaping
 	the backslash in the strings. Because of that it was giving a different output than
@@ -142,6 +142,54 @@
 	</a> 
 	</p>
 	</div>
+
+
+	<div class="collapsible"><h3><strong>Level 3 to Level 4</strong></h3></div>
+	<div class="content">
+	    <p class="walkthrough">In order to complete this level you must know how to symlink
+	    files and also know buffer overflow <br/><p>
+	    <img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia3.jpg"
+		 class="helpful"></img>
+	    <p class="walkthrough">Looking at the code above, it looks more complicated than the
+	    others. However, take a closer look and you'll notice the strcpy function is vulnerable.
+	    If you remember from the last level, the strcpy was the one function we exploited. It's
+	    vulnerable because it doesn't check for the amount of chars that is being input into it.
+	    Now what does the strcpy in the code do? It copies argv[1] into the ifile variable(which
+	    has a size of 32). And then afterwards it checks to see if the file can be read and
+	    openned. If it can be read and openned then it just copies it's contents to /dev/null</p>
+	    <p class="walkthrough">In order to exploit the code we need to overwrite the contents of
+	    ifd to point towards one of our own file. So just make a file in the tmp directory. Now
+	    how do you overwrite data to point towards ifd?. You need 32 chars minus the /tmp/
+	    directory. So it becomes 32-5= 27. So you need 27 chars + /tmp/ + filename to be what's
+	    input into the executable. Make a 27 char long dir and then make a tmp dir there.
+	    Afterwards you must symlink a file in the tmp dir with the same name as the one you
+	    created at the beginning. Symlink it to /etc/narnia_pass/narnia4 because the executable
+	    has permission to read that file and that's we need. Run the file with the tmp dir and
+	    the executable and you should get the file.</p>
+
+	    <img src="https://oriyocookie.github.io/walkthrough/OverthewireNarnia/images/narnia31.jpg"
+		 class="helpful"> </img>
+	    <p class="walkthrough"> The picture above shows my script being run. To make the script
+	    i basically put all those commands into a payload string seperated by ";" after every
+	    command. I made a bunch of variables for the filename, the overflow, directory name, the
+	    name of executable and the filepath that will be run at the end. I used the cyclic
+	    function instead of the a*27 command in python because at the beginning of my script it
+	    removes all files and dir that is being used(to prevent errors such as "file already
+	    exists"). I used cyclic because I did not want to overwrite remove the more common
+	    directories that get used. The exploit of the code is basically the same as the others.
+	    Open the shell, read the code for the level(you can skip this), send the payload to the
+	    shell and then cat the password, and then put it in interactive mode(this one isn't like
+	    the others because you're still running as narnia3 but you know the password so you can
+	    ssh into narnia3). I wasted a long time on this script because I forgot to put
+	    narnia3 on the executable(I am dumb).</p>
+	    <p class="walkthrough">
+	    <a
+		href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia3.py">Here's
+		the link to the script for Narnia3 
+	    </a> 
+	    </p>
+	</div>
+
     </body>
 
     <script src="scripts.js"></script>
