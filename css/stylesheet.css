@@ -1,0 +1,89 @@
+body {
+    background-attachment: fixed;
+    background-size:cover;
+    margin: 0px;
+    background-color:#c2d2ed;
+}
+p {
+    font-family: cantarell;
+    font-size: 20px;
+    margin-left:10px;
+}
+ul {
+
+    list-style:none;
+}
+
+
+div.top {
+    background: #262626;
+    color: #F6F6F6;
+    overflow: auto;
+    margin-top: -10px;
+    margin-bottom: -10px
+}
+
+
+div.container {
+    padding: 40px 0;
+    width: 960px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+
+img.watashi {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 450px;
+    width: 650px;
+    align: center;
+    position: center;
+}
+
+img.comfy {
+    display: inline;
+    height: 40px;
+    width: 40px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 650px;
+    align: center;
+    position: center;
+}
+
+a.button {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #F6F6F6;
+    background-color: #262626;
+    border-color: #F6F6F6;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+div.header nav.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+/* Links inside the navbar */
+div.header nav.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+

@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
 	<meta charset="UTF-8">
 	<title>Oriyo's Personal Website</title>
-	<link rel="stylesheet" href="stylesheet.css" type="text/css">
+	<link rel="stylesheet" href="css/materialize.min.css" type="text/css">
+	<link rel="stylesheet" href="css/stylesheet2.css" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
 	<link rel="icon" href="images/icon.jpeg">
-	<script src="scripts.js"></script>
-    </head>
-    <div class="top">
-	<h1><img src="images/comfyanime.png" class="comfy"></img>Oriyo's comfy website<img
-					     src="images/comfyanime.png" class="comfy"></img></h1>
-    </div>
-    <div class="header">
-	<nav class="navbar">
-	    <a href="/index.html" title="Go to index"><strong>Home</strong></a>
-	    <a href="/configs.html" title="My programs"><strong>My list of configs</strong></a>
-	    <div class="dropdown">
-		<button class="dropbtn">
-		    <strong>My CTF walkthroughs</strong></a>
-		</button>
-		<div class="dropdown-content">
-		    <a href="walkthrough/OverthewireNarnia/narnia.html">Narnia OverTheWire</a>
-		</div>
-	    </div>
-	    <a href="https://github.com/oriyocookie" title="My github"><strong>Github page</strong></a>
+  </head>
+  <div class="top center">
+	<h4><img src="images/comfyanime.png" class="comfy"></img>Oriyo's comfy website<img
+																					src="images/comfyanime.png" class="comfy"></img></h4>
+  </div>
+  <div class="header">
+	<ul id="dropdown1" class="dropdown-content grey darken-4">
+	  <li><a href="/pages/narnia.html">Overthewire Narnia</a></li>
+	</ul>
+	<nav class="grey darken-4">
+	  <div class="nav-wrapper">
+		<a href="https://github.com/oriyocookie" class="brand-logo right">My Github Page</a>
+		<ul class="left">
+
+		  <li><a href="/index.html">Home</a></li>
+		  <li><a href="/pages/configs.html">My list of configs</a></li>
+		  <!-- Dropdown Trigger -->
+		  <li><a class="dropdown-trigger" href="#" data-target="dropdown1">My CTF Walkthroughs<i class="material-icons right">arrow_drop_down</i></a></li>
+
+		</ul>
+	  </div>
 	</nav>
-    </div>
-    <body>
-	<p>Hi, welcome to Oriyo's cool and comfy website.<br/>
+
+
+  </div>
+  <body>
+	
+	<div class="parallax-container center valign-wrapper">
+	  <div class="parallax"><img src="/images/lainbg.jpg"></div>
+	  
+	  <div class="container">
+		<div class="row">
+		  <div class="col s12 white-text">
+			<!--<h2 class="red-text red-text lighten-2">Oriyo Chakma</h2> -->
+			<p>Hi, welcome to Oriyo's cool and comfy website.</p>
+		  </div>
+		</div>
+	  </div>
+
+	</div>
+	
+<p class="center">
 	This page is mainly a way to practice my HTML, CSS and JS knowledge. And also as a
 	personal blog maybe.<br/>
 	Still a work in progress!<br/></p>
 
-	<p><a
-	       href="https://hikkikomorii.itch.io/hikikomoriversion1roughdraft?secret=a1TsJg2CWoGUsULdFubWf3KyBCk&fbclid=IwAR1FXTIofKgcCY15AiSm5SNjfD_DeiMAyBHlsokIb9SiHwBKurEYK67_RvE">Here's
-	       a link to a small game i made in RPG maker during a weekend</a></p>
-	<p><a
-	       href="https://github.com/oriyocookie/CTFpwntoolsExploits">Here's
-	       a link to a bunch of quick CTF exploits i made with the pwntools library in python.
-	       They are mainly for overthewire so far</a></p>
-	<img src="images/oportunity.png" class="watashi" onmouseover="watashiHover(this);"
-							 onmouseout="watashiUnhover(this);">
 
-    </body>
-    <footer></footer>
+<div class="parallax-container center valign-wrapper" style="height:500px">
+  <div class="parallax"><img src="/images/lainbg.jpg"></div>
+  
+  <img src="images/oportunity.png" class="watashi" onmouseover="watashiHover(this);"
+	   onmouseout="watashiUnhover(this);"></img>
+
+</div>
+<div class="center">
+<p><a
+	 href="https://hikkikomorii.itch.io/hikikomoriversion1roughdraft?secret=a1TsJg2CWoGUsULdFubWf3KyBCk&fbclid=IwAR1FXTIofKgcCY15AiSm5SNjfD_DeiMAyBHlsokIb9SiHwBKurEYK67_RvE">Here's
+	a link to a small game i made in RPG maker during a weekend</a></p>
+<p><a
+	 href="https://github.com/oriyocookie/CTFpwntoolsExploits">Here's
+	a link to a bunch of quick CTF exploits i made with the pwntools library in python.
+	They are mainly for overthewire so far</a></p>
+</div>
+</body>
+
+<footer></footer>
+<script type="text/javascript" src="/scripts/materialize.min.js"></script>
+<script src="/scripts/scripts.js"></script>
 </html>
 

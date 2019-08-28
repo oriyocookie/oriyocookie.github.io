@@ -1,0 +1,162 @@
+body {
+	background-color:black;
+	background-attachment: fixed;
+	background-size:cover;
+	margin: 0px;
+	color:white;
+}
+p {
+	font-family: monospace;
+	font-size: 14px;
+	color:white;
+	margin-left:10px;
+	Background-color:black;
+}
+p.walkthrough{
+	margin-left:40px;
+	text-align:left;
+}
+
+div.top {
+	background-image: url("/images/eyes.jpg");
+	font-family: monospace;
+	color: #F6F6F6;
+	overflow: auto;
+}
+div.container {
+	padding: 40px 0;
+	width: 960px;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+img.comfy {
+	display: inline;
+	height: 40px;
+	width: 40px;
+}
+
+img.intro {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	width: 350px;
+}
+
+img.helpful {
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+a.button {
+	display: inline-block;
+	margin-bottom: 1rem;
+	color: #F6F6F6;
+	background-color: #262626;
+	border-color: #F6F6F6;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.3rem;
+	text-decoration: none;
+	padding: 10px;
+}
+h4.walkthrough::before{
+	content:"$";
+	color:green;
+}
+p.walkthrough::before{
+	content:">";
+	color:green;
+}
+
+
+
+div.header nav.navbar {
+	overflow: hidden;
+	background-color: #333;
+	font-family: Arial;
+}
+
+/* Links inside the navbar */
+div.header nav.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+/* The dropdown container */
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+	font-size: 16px; 
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit; /* Important for vertical align on mobile phones */
+	margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a blue background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: darkblue;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #333;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	padding: 10px;10px;
+	top: 100% !important;
+}
+
+
+
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+	text-align:left;
+	color:white;
+	background-color:black;
+	outline: none;
+	border-top: 0px;
+	border-left: 0px;
+}
+.active, .collapsible:hover {
+	color:red;
+}
+
+.content {
+	overflow: hidden;
+	display:none;
+}
+
+img.watashi {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 450px;
+	width: 650px;
+	align: center;
+	position: center;
+}   
+
+
+.parallax-container{
+	height:200px;
+}

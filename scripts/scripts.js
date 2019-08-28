@@ -5,3 +5,4 @@ function watashiHover(element) {
 function watashiUnhover(element) {
 	element.setAttribute("src", "images/oportunity.png");
 }
+M.AutoInit();
