@@ -10,11 +10,14 @@ p {
 	font-size: 14px;
 	color:white;
 	margin-left:10px;
-	Background-color:black;
 }
 p.walkthrough{
-	margin-left:40px;
-	text-align:left;
+	text-align:right;
+	margin-left:auto;
+}
+
+p.homesection{
+	font-size:10px;
 }
 
 div.top {
@@ -130,7 +133,7 @@ div.header nav.navbar a {
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-	text-align:left;
+	text-align:right;
 	color:white;
 	background-color:black;
 	outline: none;
@@ -148,15 +151,34 @@ div.header nav.navbar a {
 
 img.watashi {
 	display: block;
-	margin-left: auto;
+	margin-left: 40%;
 	margin-right: auto;
 	height: 450px;
 	width: 650px;
 	align: center;
 	position: center;
 }   
+.left-margin
+{
+	margin-left:50%;
+}
 
+.small-left-margin
+{
+	margin-left:300px;
+}
 
 .parallax-container{
 	height:100px;
+}
+#home-section1 {
+	background-image:url("/images/lainbg.jpg");
+	background-size:cover;
+}
+
+#home-section3 {
+	background-image:url("/images/section2.jpg");
+	background-color:black;
+	background-size:cover;
+	background-blend-mode:hard-light;
 }

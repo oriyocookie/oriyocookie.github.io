@@ -1,3 +1,6 @@
+
+M.AutoInit();
+
 function watashiHover(element) {
 	element.setAttribute('src', 'images/oportunitygrabbed.jpg');
 }
@@ -5,4 +8,6 @@ function watashiHover(element) {
 function watashiUnhover(element) {
 	element.setAttribute("src", "images/oportunity.png");
 }
-M.AutoInit();
+
+ var elem = document.querySelector('.sidenav');
+  var instance = new M.Sidenav(elem);

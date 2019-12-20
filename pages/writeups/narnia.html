@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title>Oriyo's Personal Website</title>
+	<link rel="stylesheet" href="/css/materialize.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/stylesheet2.css" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+	<link rel="icon" href="images/icon.jpeg">
+  </head>
+
+  <body>
+	<!--
+		<div class="parallex-container center valign-wrapper">
+		  <div class="parallex"><img src="/images/lainbg.jpg"></div>
+
+		  -->
+
+		  <nav class="grey darken-4">
+			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons large">menu</i></a>
+
+				
+				
+		  </nav>
+
+		  
+		  <div class="sidenav-content">
+			<ul id="slide-out" class="sidenav black sidenav-fixed">
+			  <li><div class="user-view">
+				  <a href="#user"><img src="/images/me.png"></a> 
+				</div>
+				
+			  <li><a href="/index.html"><i class="material-icons white-text">home</i> <p>Home</p> 
+			  </a></li>
+
+			  <li><a href="/pages/about.html"><i class="material-icons white-text">person</i> <p>About</p> 
+			  </a></li>
+
+			  <li><a href="/pages/config.html"><i class="material-icons white-text">computer</i> <p>Configuration files</p> 
+			  </a></li>
+
+			  </li>
+			  <li><a href="/pages/ctf.html"><i class="material-icons white-text">no_encryption</i> <p>CTF Walkthroughs</p> 
+			  </a></li>
+
+			  <li><a href="/pages/links.html"><i class="material-icons white-text">insert_link</i> <p>Links</p> 
+			  </a></li>
+
+			  <li><a href="https://github.com/oriyocookie"><i class="material-icons white-text">code</i> <p>github</p> 
+			  </a></li>
+			</ul>
+		  </div>
+
+		  <main>
+			
+	<div class="parallax-container center valign-wrapper" style="height:300px">
+
+	  <img src="/images/Touko_NAVI.png" class="intro"></img>
+	  <div class="parallax"><img src="/images/lainbg.jpg"></div>
+	</div>
+
+                        <section class="parallex">
+                          <div class="container">
+                                <div class="row">
+
+                                  <div class="col s12 m12">
+									    <p>Hi, welcome to Oriyo's cool and comfy Narnia walkthroughs. I worked through the Narnia
+	  game in Overthewire, and after i was done, i made a python script using the pwntools
+	  library. I just log the details on how i finished the levels. I'll keep the passwords as
+	  hidden as possible, but obviously if you read the code for the scripts you'll find them
+	  there. Also I won't post exactly how to solve it and give the commands. You can obviously
+	  find them if you go through the scripts(So i guess i am kinda giving the answer lul). This is still a work in progress</p>
+        <div class="parallax-container center valign-wrapper" style="height:300px">
+            <img src="/images/Touko_NAVI.png" class="intro"></img>
+            <div class="parallax">
+                <img src="/images/lainbg.jpg">
+            </div>
+        </div>
+        <p>The format for my walkthrough will be simple. I will briefly go over the code and write
+	  what i plan on doing to complete the level. Then I shall talk about how I wrote the script
+	  and what I had to do to write the script. In between all those i'll post pics </p>
+        <p>Click the levels to open up the walkthrough</p>
+        <div class="parallax-container center valign-wrapper">
+            <div class="parallax">
+                <img src="/images/lainbg.jpg">
+            </div>
+        </div>
+        <div class="collapsible">
+            <h4 class="walkthrough">
+                <strong>Level 0 to Level 1</strong>
+            </h4>
+        </div>
+        <div class="content">
+            <p class="walkthrough">
+                This one is a fairly simple level. As you can see from the image
+		below <br/>
+                <p>
+                    <img class="materialboxed materialboxed helpful responsive-img" width="300" src="/images/narnia/narnia0.jpg"></img>
+                <p class="walkthrough">There is a value that is initialized at 0x41414141 and you need to
+		change it to deadbeef. The buffer can hold a maximum of 20 characters. So in order to
+		overflow the buffer and go into changing the value of val, you just need to input 20
+		characters and put \xef\xbe\xad\xde\, which is how deadbeef has to be put in because of
+		little endianness</p>
+            <p class="walkthrough">Making the python script was fairly simple for this too. All you have
+		to do is make the ssh connection, execute the file and send the payload which is A*20 + the
+		little endian of deadbeef(which can be done very easily by using the p32 command in pwntools). Fortunately for us pwntools allows us to do all those really
+		fast. For running the file, you need to use the run command in pwntools, and then do
+		recvuntill(':') because you want to receive the code untill it asks for input. And then you
+		send the payload by using the sendline command in pwntools. The output from running the
+		pwntools is given below</p>
+            <img src="/images/narnia/narnia01.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+            <p class="walkthrough">
+                <a href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia0.py">Here's
+		  the link to the script for Narnia0 
+		</a>
+            </p>
+        </div>
+        <div class="collapsible">
+            <h4 class="walkthrough">
+                <strong>Level 1 to Level 2</strong>
+            </h4>
+        </div>
+        <div class="content">
+            <p class="walkthrough">
+                This level mainly deals with the environment variables <br/>
+                <p>
+                    <img src="/images/narnia/narnia1.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+                <p class="walkthrough">As you can see from the code above, all this executable file does is
+		call the environment variable EGG</p>
+            <p class="walkthrough">
+                We can easily change the environment value of EGG and call it to
+		execute commands as you can see in the image below. So to complete this level we just need to put a shell
+		code as the value for egg. You can find a bunch of shell codes at <a href="http://shell-storm.org/shellcode/">shell-storm </a>
+            </p>
+            <img src="/images/narnia/narnia11.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+            <p class="walkthrough">In order to write our python script we need to do just that. Our
+		payload has to be export EGG="shellcode" and then we need to run the narnia1 executable
+		after that. The output from my script is given below</p>
+            <img src="/images/narnia/narnia12.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+            <p class="walkthrough">
+                <a href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia1.py">Here's
+		  the link to the script for Narnia1 
+		</a>
+            </p>
+        </div>
+        <div class="collapsible">
+            <h4 class="walkthrough">
+                <strong>Level 2 to Level 3</strong>
+            </h4>
+        </div>
+        <div class="content">
+            <p class="walkthrough">
+                This level mainly deals with buffer overflow <br/>
+                <p>
+                    <img src="/images/narnia/narnia2.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+                <p class="walkthrough">As you can see from the code above, all this executable file does is
+		copy the argv[1] into buf variable(that can hold 128 chars) and then prints out the buf.
+		Important to note that strcpy can be expoited by buffer overflows</p>
+            <p class="walkthrough">So for this level, all we would need to do is pass in an argument
+		that overflows the buf, inserts a shell code into it, and then has a return "Sled" at the
+		end.</p>
+            <img src="/images/narnia/narnia21.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+            <p class="walkthrough">Let's look at what's happening in the picture above. So i tried
+		running the file with 128 'A's, and it executed properly. Then i tried running it with 133 'A's
+		and it gave me a SIGSEGV signal, which is what we kind of want, so we are getting there.
+		Then i tried running it with 136 'A's and it gave me a SIGSEGV again, but notice how the
+		return address was changed from 0xf7e20048 to 0x41414141. 0x41 is 'A' btw. So the return
+		address is somewhere above 136 or is 136. It turned out to be in 136. After a bunch of tries
+		putting the value 0xdeadbeef(which is 4 bytes long), I found
+		that 132 works since you can see that the 0x41414141 has changed  into 0xdeadbeef. So 132 is what we want,
+		however you have to take into account the shell code, which for the one i used is 28 chars
+		long. So when inserting the shell code it has to be 132-28 'A's printed and then the shell
+		code which is 28 chars and then the return address.Now how do we find what the return
+		address is.</p>
+            <img src="/images/narnia/narnia22.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+            <p class="walkthrough">Now let's look at the above picture. We are looking at the memory
+		addresses of the esp register. We can get our return address from here. Look at all the
+		0x41 aka 'A's that are there. I used 0xffffd890 as my return address</p>
+            <p class="walkthrough">I was kind of having trouble writing the script for this one because
+		of my inexperience with using pwntools. At first I tried making the payload=A*104+ exe + shellcode
+		+ return_address, which is what needs to be run. But it wasn't working. So i gave in and put
+		in the python commands in string. It didn't work still but then I noticed I wasn't escaping
+		the backslash in the strings. Because of that it was giving a different output than
+		\x90\xd8\xff... But anyways after doing that it worked :), and here's the output below</p>
+            <img src="/images/narnia/narnia23.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+            <p class="walkthrough">
+                <a href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia2.py">Here's
+		  the link to the script for Narnia2 
+		</a>
+            </p>
+        </div>
+        <div class="collapsible">
+            <h4 class="walkthrough">
+                <strong>Level 3 to Level 4</strong>
+            </h4>
+        </div>
+        <div class="content">
+            <p class="walkthrough">
+                In order to complete this level you must know how to symlink
+		files and also know buffer overflow <br/>
+                <p>
+                    <img src="/images/narnia/narnia3.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+                <p class="walkthrough">Looking at the code above, it looks more complicated than the
+		others. However, take a closer look and you'll notice the strcpy function is vulnerable.
+		If you remember from the last level, the strcpy was the one function we exploited. It's
+		vulnerable because it doesn't check for the amount of chars that is being input into it.
+		Now what does the strcpy in the code do? It copies argv[1] into the ifile variable(which
+		has a size of 32). And then afterwards it checks to see if the file can be read and
+		openned. If it can be read and openned then it just copies it's contents to /dev/null</p>
+            <p class="walkthrough">In order to exploit the code we need to overwrite the contents of
+		ifd to point towards one of our own file. So just make a file in the tmp directory. Now
+		how do you overwrite data to point towards ifd?. You need 32 chars minus the /tmp/
+		directory. So it becomes 32-5= 27. So you need 27 chars + /tmp/ + filename to be what's
+		input into the executable. Make a 27 char long dir and then make a tmp dir there.
+		Afterwards you must symlink a file in the tmp dir with the same name as the one you
+		created at the beginning. Symlink it to /etc/narnia_pass/narnia4 because the executable
+		has permission to read that file and that's we need. Run the file with the tmp dir and
+		the executable and you should get the file.</p>
+            <img src="/images/narnia/narnia31.jpg" class="materialboxed helpful responsive-img" width="300"></img>
+            <p class="walkthrough">The picture above shows my script being run. To make the script
+		i basically put all those commands into a payload string seperated by ";" after every
+		command. I made a bunch of variables for the filename, the overflow, directory name, the
+		name of executable and the filepath that will be run at the end. I used the cyclic
+		function instead of the a*27 command in python because at the beginning of my script it
+		removes all files and dir that is being used(to prevent errors such as "file already
+		exists"). I used cyclic because I did not want to overwrite remove the more common
+		directories that get used. The exploit of the code is basically the same as the others.
+		Open the shell, read the code for the level(you can skip this), send the payload to the
+		shell and then cat the password, and then put it in interactive mode(this one isn't like
+		the others because you're still running as narnia3 but you know the password so you can
+		ssh into narnia3). I wasted a long time on this script because I forgot to put
+		narnia3 on the executable(I am dumb).</p>
+            <p class="walkthrough">
+                <a href="https://github.com/oriyocookie/CTFpwntoolsExploits/blob/master/overthewireNarnia/exploit_narnia3.py">Here's
+		  the link to the script for Narnia3 
+		</a>
+            </p>
+
+                                  </div>
+
+
+                                </div>
+                          </div>
+                        </section>
+
+
+
+		  </main>
+
+  </body>
+
+
+
+
+  
+  <footer class="page-footer grey darken-4">
+	  <div class="container">
+		<p class="right" style="font-size:10px">This website is made with <span style="color:red">❤️</span>  and materialize css</p>
+	  </div>
+	</div>
+  </footer>
+  
+  <script type="text/javascript" src="/scripts/materialize.min.js"></script>
+  <script src="/scripts/scripts.js"></script>
+  <script src="/scripts/narniaScript.js"></script>
+
+</html>
+

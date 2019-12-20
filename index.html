@@ -3,79 +3,208 @@
   <head>
 	<meta charset="UTF-8">
 	<title>Oriyo's Personal Website</title>
-	<link rel="stylesheet" href="css/materialize.min.css" type="text/css">
-	<link rel="stylesheet" href="css/stylesheet2.css" type="text/css">
+	<link rel="stylesheet" href="/css/materialize.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/stylesheet2.css" type="text/css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
 	<link rel="icon" href="images/icon.jpeg">
   </head>
-  <div class="top center">
-	<h4><img src="images/comfyanime.png" class="comfy"></img>Oriyo's comfy website<img
-																					src="images/comfyanime.png" class="comfy"></img></h4>
-  </div>
-  <div class="header">
-	<ul id="dropdown1" class="dropdown-content grey darken-4">
-	  <li><a href="/pages/narnia.html">Overthewire Narnia</a></li>
-	</ul>
-	<nav class="grey darken-4">
-	  <div class="nav-wrapper">
-		<a href="#" class="brand-logo right">Oriyo Chakma</a>
-		<ul class="left">
 
-		  <li><a href="/index.html">Home</a></li>
-		  <li><a href="/pages/configs.html">My list of configs</a></li>
-		  <!-- Dropdown Trigger 
-		  <li><a class="dropdown-trigger" href="#" data-target="dropdown1">My CTF Walkthroughs<i class="material-icons right">arrow_drop_down</i></a></li>
+  <body>
+	<!--
+		<div class="parallex-container center valign-wrapper">
+		  <div class="parallex"><img src="/images/lainbg.jpg"></div>
+
 		  -->
 
-		  <li><a href="/pages/narnia.html">CTF walkthrough</a></li>
-		  <li><a href="https://github.com/oriyocookie">My Github Page</a></li>
-		</ul>
-	  </div>
-	</nav>
+		  <nav class="grey darken-4">
+			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons large">menu</i></a>
+
+			<!--
+				<div class="nav-wrapperi hide-on-large-only">                                                                                                                                                                                                                                       
+				  
+				  <ul class="left">                                                                                                                                                                                                                                     
+					
+					<li><a href="/index.html">Home</a></li>                                                                                                                                                                                                                 
+
+					<li><a href="/index.html">About</a></li>                                                                                                                                                                                                                 
+					<li><a href="/pages/configs.html">Configuration files </a></li>                                                                                                                                                                                           
+					<li><a href="/pages/narnia.html">CTF walkthrough</a></li>                                                                                                                                                                                               
+					<li><a href="https://github.com/oriyocookie">github</a></li>                                                                                                                                                                                    
+					
+
+				  </ul>
+				</div>
+
+				-->
 
 
-  </div>
-  <body>
-	
-	<div class="parallax-container center valign-wrapper">
-	  <div class="parallax"><img src="/images/lainbg.jpg"></div>
-	  
-	  <div class="container">
-		<div class="row">
-		  <div class="col s12 white-text">
-			<!--<h2 class="red-text red-text lighten-2">Oriyo Chakma</h2> -->
-			<p>Hi, welcome to Oriyo's cool and comfy website.</p>
+				
+				
+				
+		  </nav>
+
+		  
+		  <div class="sidenav-content">
+			<ul id="slide-out" class="sidenav black sidenav-fixed">
+			  <li><div class="user-view">
+				  <a href="#user"><img src="/images/me.png"></a> 
+				</div>
+				
+			  <li><a href="/index.html"><i class="material-icons white-text">home</i> <p>Home</p> 
+			  </a></li>
+
+			  <li><a href="/pages/about.html"><i class="material-icons white-text">person</i> <p>About</p> 
+			  </a></li>
+
+			  <li><a href="/pages/config.html"><i class="material-icons white-text">computer</i> <p>Configuration files</p> 
+			  </a></li>
+
+			  </li>
+			  <li><a href="/pages/ctf.html"><i class="material-icons white-text">no_encryption</i> <p>CTF Walkthroughs</p> 
+			  </a></li>
+
+			  <li><a href="/pages/links.html"><i class="material-icons white-text">insert_link</i> <p>Links</p> 
+			  </a></li>
+
+			  <li><a href="https://github.com/oriyocookie"><i class="material-icons white-text">code</i> <p>github</p> 
+			  </a></li>
+			</ul>
 		  </div>
-		</div>
-	  </div>
 
-	</div>
-	
-	<p class="center">
-	  This page is mainly a way to practice my HTML, CSS and JS knowledge. And also as a
-	  personal blog maybe.<br/>
-	  Still a work in progress!<br/></p>
+		  <main>
+			
+			<section id="home-section1" class="parallex">
+			  <div class="container">
+				<h2 class="right-align"> Oriyo Chakma </h2>
+				<p class="right-align left-margin">
+				  Hi welcome to my cool and comfy website.
+				  This page is mainly a way to practice my HTML, CSS and JS knowledge. And also as a
+				  personal blog maybe.<br/>
+				  Still a work in progress!<br/></p>
+			  </div>
+			</section>
+			
+			<section id="home-section2" class="parallex">
+			  <div class="container">
+				<div class="row">
+
+				  <div class="col s12 m4">
+					
+					<div class="col s5 m12">	
+					  <i class="material-icons white-text right large">emoji_people</i> 
+					</div>	
+					
+					<h6 class="center left-margin">
+					  About Me
+					</h6>
+
+					<p class="center left-margin homesection">
+					  Hi, this is Oriyo and I am from Bangladesh, which is a small country in South Asia. I came to Canada starting from Grade 10 and ended up going to university here too.   
+					  I enjoy programming and anything computer related. If you want to know more, just click the button below :)
+					</p>
+
+					<a href="/pages/about.html" class="right left-margin waves-effect waves-light btn-small">read more</a>
+				  </div>
+
+				  <div class="col s12 m4">
+					
+					<div class="col s5 m12">	
+					  <i class="material-icons white-text right large">lock_open</i> 
+					</div>	
+					
+					<h6 class="center left-margin">
+					  CTF Writeups
+					</h6>
+					<p class="center left-margin homesection">
+					  Writeups for CTF challenges from HackTheBox.eu and Overthewire. Some of the HackTheBox writeups may be password protected because the machines may still be active and therefore the writeups need to be password protected. Mainly done as a hobby and to sharpen my knowledge in computer security.
+					</p>
+					<a href="/pages/ctf.html" class="right left-margin waves-effect waves-light btn-small">read more</a>
+				  </div>
 
 
-	<div class="parallax-container center valign-wrapper" style="height:500px">
-	  <div class="parallax"><img src="/images/lainbg.jpg"></div>
-	  
-	  <img src="images/oportunity.png" class="watashi" onmouseover="watashiHover(this);"
-		   onmouseout="watashiUnhover(this);"></img>
+				  <div class="col s12 m4">
+					
+					<div class="col s5 m12">	
+					  <i class="material-icons white-text right large">laptop</i> 
+					</div>	
+					
+					<h6 class="center left-margin">
+					  My programs and their configs
+					</h6>
 
-	</div>
-	<div class="center">
-	  <p><a
-		   href="https://hikkikomorii.itch.io/hikikomoriversion1roughdraft?secret=a1TsJg2CWoGUsULdFubWf3KyBCk&fbclid=IwAR1FXTIofKgcCY15AiSm5SNjfD_DeiMAyBHlsokIb9SiHwBKurEYK67_RvE">Here's
-		  a link to a small game i made in RPG maker during a weekend</a></p>
-	  <p><a
-		   href="https://github.com/oriyocookie/CTFpwntoolsExploits">Here's
-		  a link to a bunch of quick CTF exploits i made with the pwntools library in python.
-		  They are mainly for overthewire so far</a></p>
-	</div>
+					<p class="center left-margin homesection">
+					  Some of my most used programs and their configuration files. Most of the programs I use are modified in order to increase my efficiency when using them and also to make my UI look more nicer
+					</p>
+
+					<a href="/pages/config.html" class="right left-margin waves-effect waves-light btn-small">read more</a>
+				  </div>
+				</div>
+			  </div>
+			</section>
+
+
+
+			<section id="home-section3" class="parallex">
+
+			  <div class="container">
+
+				<div class="row">
+
+				  <div class="col s12 m6">
+					
+					<div class="col s5 m12">	
+
+					  <img class="materialboxed" data-caption="RPG Maker Game" src="/images/rpgmakergame2.jpg" style="object-fit:cover; height:100%; width:100%">
+					</div>	
+
+					<img class="materialboxed" data-caption="Unfinished C++ Game" src="/images/sdlgame.png" style="object-fit:cover; height:100%; width:100%">
+
+				  </div>
+
+				  <div class="col s12 m6">
+
+					
+					<div class="col s5 m12">	
+
+
+
+					</div>	
+
+					<p class="center left-margin">
+					  A game made i made in RPG maker in less than one week. I got RPG maker on sale during one weekend, and decided to try it out and make one game. It was fun to make but since RPG maker did not have much coding involved, i decided to not spend too much time on it. Click the RPG maker game button to check out the game.					</p>				
+					<a href="https://hikkikomorii.itch.io/hikikomoriversion1roughdraft?secret=a1TsJg2CWoGUsULdFubWf3KyBCk&fbclid=IwAR1FXTIofKgcCY15AiSm5SNjfD_DeiMAyBHlsokIb9SiHwBKurEYK67_RvE" target="_blank" class="right left-margin waves-effect waves-light btn-small">RPG maker game</a>
+					<p class="center left-margin">
+					  I also have another unfinished game project I made from scratch using only c++ and the SDL2 framework. Click the Unfinished C++ game button to check out the github code for that. 
+					</p>
+					<a href="https://github.com/oriyocookie/NeetGame" target="_blank" class="right left-margin waves-effect waves-light btn-small">Unfinished C++ game</a>
+				  </div>
+
+
+				</div>
+			  </div>
+
+
+
+
+			  
+			</section>
+
+
+		  </main>
+
   </body>
 
-  <footer></footer>
+
+
+
+  
+  <footer class="page-footer grey darken-4">
+	  <div class="container">
+		<p class="right" style="font-size:10px">This website is made with <span style="color:red">❤️</span>  and materialize css</p>
+	  </div>
+	</div>
+  </footer>
+  
   <script type="text/javascript" src="/scripts/materialize.min.js"></script>
   <script src="/scripts/scripts.js"></script>
 </html>
