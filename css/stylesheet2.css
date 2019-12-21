@@ -72,7 +72,10 @@ p.walkthrough::before{
 	content:">";
 	color:green;
 }
-
+a.link::before{
+	content:">";
+	color:green;
+}
 
 
 div.header nav.navbar {
@@ -149,8 +152,6 @@ div.header nav.navbar a {
 
 img.watashi {
 	display: block;
-	margin-left: 40%;
-	margin-right: auto;
 	height: 450px;
 	width: 650px;
 	align: center;
