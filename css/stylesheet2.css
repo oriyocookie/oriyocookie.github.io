@@ -12,8 +12,7 @@ p {
 	margin-left:10px;
 }
 p.walkthrough{
-	text-align:right;
-	margin-left:auto;
+	text-align:left;
 }
 
 p.homesection{
@@ -133,7 +132,6 @@ div.header nav.navbar a {
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-	text-align:right;
 	color:white;
 	background-color:black;
 	outline: none;
@@ -182,3 +180,14 @@ img.watashi {
 	background-size:cover;
 	background-blend-mode:hard-light;
 }
+
+
+    header, main, footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
