@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title>Oriyo's Personal Website</title>
+	<link rel="stylesheet" href="/css/materialize.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/stylesheet2.css" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+	<link rel="icon" href="images/icon.jpeg">
+  </head>
+
+  <body>
+	<!--
+		<div class="parallex-container center valign-wrapper">
+		  <div class="parallex"><img src="/images/lainbg.jpg"></div>
+
+		  -->
+
+		  <nav class="grey darken-4">
+			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons large">menu</i></a>
+
+			
+			
+		  </nav>
+
+		  
+		  <div class="sidenav-content">
+			<ul id="slide-out" class="sidenav black sidenav-fixed">
+			  <li><div class="user-view">
+				  <a href="#user"><img src="/images/me.png"></a> 
+				</div>
+				
+			  <li><a href="/index.html"><i class="material-icons white-text">home</i> <p>Home</p> 
+			  </a></li>
+
+			  <li><a href="/pages/about.html"><i class="material-icons white-text">person</i> <p>About</p> 
+			  </a></li>
+
+			  <li><a href="/pages/config.html"><i class="material-icons white-text">computer</i> <p>Configuration files</p> 
+			  </a></li>
+
+			  </li>
+			  <li><a href="/pages/ctf.html"><i class="material-icons white-text">no_encryption</i> <p>CTF Walkthroughs</p> 
+			  </a></li>
+
+			  <li><a href="/pages/links.html"><i class="material-icons white-text">insert_link</i> <p>Links</p> 
+			  </a></li>
+
+			  <li><a href="https://github.com/oriyocookie"><i class="material-icons white-text">code</i> <p>github</p> 
+			  </a></li>
+			</ul>
+		  </div>
+
+		  <main>
+			
+			<section id="home-section4" class="parallex">
+			  <h2> About my Kali Linux setup </h2>
+			  <p>
+				The distro I use for doing the CTF challenges in HackTheBox is Kali Linux, because it has pretty much most of the tools that I need. First of all, I just setup a VirtualBox to run the latest Kali Linux image. The manual for those can be found by googling easily and I won't be writing about how to install it on the virtualbox, it should be fairly straightforward. This writeup is more about how I setup my Kali.' 
+			  </p>
+			  <img src="/images/setup/kaliBootToTui.png" class="materialboxed helpful responsive-img" /img>
+			  <p>
+				First thing I did is to disable the Kali from booting into a GUI. Why you may ask? Because I dont usually use it through the virtual machine, I prefer using it through my own local machine by SSHing into the virtual machine from my own. 
+				<br>
+				The way to set it up to boot to command line is to edit the /etc/default/grub and change the values for GRUB_CMDLINE_LINUX_DEFAULT to "text" and then set GRUB_TERMINAL=console.
+				<br>
+				Afer that I just run sudo update-grub;sudo systemctl enable multi-user.target --force;sudo systemctl set-default multi.user.target
+				<br>
+				And then you're done. You can just boot into the GUI by typing startxfce4(If you are running the xfce4 version of Kali, it differs for other desktop managers).
+			  </p>
+
+			  <img src="/images/setup/KaliNAT.png" class="materialboxed helpful responsive-img" /img>
+
+			  <p>
+				After that you have to set it up so that you can SSH into it. First thing I do is setup a port forwarding option in my virtual machine. I set up guest port to be port 22(the ssh port) and then i set up Host port to be just a good number that works for me. The Host IP will be 127.0.0.1 and the guest IP will be whatever shows up when you type ifconfig on Kali, usually its 10.0.2.15, and the protocol for it will be the TCP protocol. After that I edit the /etc/ssh/sshd_config where I enable to log in as root and change the values for PubKeyAuthentication and PasswordAuthentication, depending on what I need. After that to start the ssh service just type in service ssh start and you should be able to ssh into the VM through the local machine  
+			  </p>
+
+			  <img src="/images/setup/kaliSSH.png" class="materialboxed helpful responsive-img" /img>
+			  <p> After everything is setup just type in ssh -p (whatever port you used) root@localhost and you should be able to login and use Kali Linux through the comfort of your own machine. </p>
+
+			</section>
+
+
+
+		  </main>
+
+  </body>
+
+
+
+
+
+  <footer class="page-footer grey darken-4">
+	<div class="container">
+	  <p class="right" style="font-size:10px">This website is made with <span style="color:red">❤️</span>  and materialize css</p>
+	</div>
+  </div>
+  </footer>
+
+  <script type="text/javascript" src="/scripts/materialize.min.js"></script>
+  <script src="/scripts/scripts.js"></script>
+</html>
+
